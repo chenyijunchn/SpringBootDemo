@@ -9,6 +9,7 @@ package com.SpringBootDemo.controller;
  */
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,11 +32,29 @@ public class UserController {
 		return "Hello World!";
 	}
 
-	@RequestMapping(value = { "/getUserList" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/getUserList" })
+	@ResponseBody
 	public List<User> getUserList() {
 		System.out.println("查询用户信息。。。。。。。。。");
-		// ModelAndView mav=new ModelAndView();
 		return userService.getAll();
+	}
+
+	@RequestMapping("/getById")
+	@ResponseBody
+	public User getUser(@RequestParam(name = "user_id") String id) {
+		// 调用service服务获取对应id的用户对象并返回给前端
+		User userModel = userService.find(id);
+		return convertFromModel(userModel);
+	}
+
+	private User convertFromModel(User userModel) {
+		if (userModel == null) {
+			return null;
+		}
+		User userVO = new User();
+		BeanUtils.copyProperties(userModel, userVO);
+		return userVO;
+
 	}
 
 	@RequestMapping(value = { "/addUser" }, method = RequestMethod.POST)
