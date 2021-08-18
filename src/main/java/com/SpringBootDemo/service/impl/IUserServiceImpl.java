@@ -1,20 +1,19 @@
 package com.SpringBootDemo.service.impl;
 
-import java.util.List;
-
+import com.SpringBootDemo.dao.IUserDao;
+import com.SpringBootDemo.model.User;
+import com.SpringBootDemo.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.SpringBootDemo.dao.IUserDao;
-import com.SpringBootDemo.model.User;
-import com.SpringBootDemo.service.IUserService;
+import java.util.List;
 
 @Service
-public class UserServiceImpl implements IUserService {
-	private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+public class IUserServiceImpl implements IUserService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(IUserServiceImpl.class);
 
 	@Autowired
 	private IUserDao userDao;

@@ -1,12 +1,11 @@
 package com.SpringBootDemo.dao;
 
+import com.SpringBootDemo.model.User;
+import org.apache.ibatis.annotations.Mapper;
+
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
-import com.SpringBootDemo.model.User;
-
-@Repository
+@Mapper
 public interface IUserDao {
 	List<User> getAll();
 

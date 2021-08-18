@@ -3,27 +3,29 @@
  */
 package com.chenyijun.SpringBootDemo;
 
-import java.util.List;
-
+import com.SpringBootDemo.model.User;
+import com.SpringBootDemo.service.impl.IUserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.SpringBootDemo.model.User;
-import com.SpringBootDemo.service.impl.UserServiceImpl;
+import java.util.List;
 
 /**
  * @author yijun
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-
-public class UserServiceImplTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@ContextConfiguration(value={"mybatis-config.xml"})
+public class IUserServiceImplTest {
 
 	@Autowired
-	UserServiceImpl userService;
+	IUserServiceImpl userService;
 
 	@Test
 	@Transactional
