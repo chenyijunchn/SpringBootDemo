@@ -8,20 +8,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="helloworld" />
+        <module name="setbanner" />
         <module name="SpringBootDemo" />
+        <module name="BannerDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BannerDemo" target="1.8" />
       <module name="chapter03" target="1.8" />
       <module name="helloworld" target="1.8" />
+      <module name="setbanner" target="1.8" />
       <module name="SpringBootDemo" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BannerDemo" options="-parameters" />
       <module name="SpringBootDemo" options="-parameters" />
       <module name="chapter03" options="-parameters" />
       <module name="helloworld" options="-parameters" />
+      <module name="setbanner" options="-parameters" />
     </option>
   </component>
 </project>
