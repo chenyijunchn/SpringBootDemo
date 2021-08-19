@@ -1,9 +1,0 @@
-server:
-  port: 8004
-
-spring:
-  banner:
-    image:
-      location: banner.txt
-  main:
-    banner-mode: log
