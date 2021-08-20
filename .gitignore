@@ -1,2 +1,21 @@
-/target/
+*.class
+*.log
+*.lock
+*.diff
+
+#package files
+*.jar
+*.war
+*.ear
+target/
+
+#IDEA
 .idea/
+.idea
+bin/
+*.iml
+
+#eclipse
+.classpath
+.settings/
+.project
