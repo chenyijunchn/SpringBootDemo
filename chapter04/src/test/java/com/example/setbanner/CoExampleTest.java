@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * FileName:CoExampleTest
  * Author:Jane
  * Date:2021/8/2218:00
- * Description:
+ * Description:get application.properties value
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
