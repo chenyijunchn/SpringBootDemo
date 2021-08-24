@@ -29,6 +29,7 @@ public class SpringBootDemoApplication {
 	 * 
 	 * @return
 	 */
+
 	@Bean
 	public HttpMessageConverters fastJsonHttpMessageConverters() {
 		// 1.需要定义一个convert转换消息的对象;

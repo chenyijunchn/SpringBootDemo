@@ -11,6 +11,10 @@ spring:
   output:
     ansi:
       enabled: always
+  thymeleaf:
+    model: LEGACYHTML5
+    prefix: classpath:templates/
+    cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springdb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.SpringBootDemo.model.User;
 import com.SpringBootDemo.service.IUserService;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/user")
@@ -44,23 +45,15 @@ public class UserController {
 		return userService.getAll();
 	}
 
-	@RequestMapping("/getById")
-	@ResponseBody
-	public User getUser(@RequestParam(name = "user_id") String id) {
+	@RequestMapping(value = "/getById",method = RequestMethod.GET)
+	public ModelAndView getUser(@RequestParam(name = "user_id") String id) {
 		// 调用service服务获取对应id的用户对象并返回给前端
 		User userModel = userService.find(id);
-		return convertFromModel(userModel);
+		ModelAndView mav=new ModelAndView("userview");
+		mav.addObject("vuser",userModel);
+		return mav;
 	}
 
-	private User convertFromModel(User userModel) {
-		if (userModel == null) {
-			return null;
-		}
-		User userVO = new User();
-		BeanUtils.copyProperties(userModel, userVO);
-		return userVO;
-
-	}
 
 	@RequestMapping(value = { "/addUser" }, method = RequestMethod.POST)
 	@ResponseBody
