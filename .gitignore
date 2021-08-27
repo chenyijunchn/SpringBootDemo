@@ -14,6 +14,7 @@ target/
 .idea
 bin/
 *.iml
+!.mvn/wrapper/maven-wrapper.jar
 
 #eclipse
 .classpath
