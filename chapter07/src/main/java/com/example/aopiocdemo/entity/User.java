@@ -1,8 +1,9 @@
 package com.example.aopiocdemo.entity;
 
-import lombok.Data;
-
+import lombok.*;
+import javax.persistence.*;
 import java.io.Serializable;
+
 
 /**
  * FileName:User
@@ -10,8 +11,14 @@ import java.io.Serializable;
  * Date:2021/8/2711:27
  * Description:
  */
+@Entity
+@Table(name = "tb_user")
 @Data
+@Setter
+@Getter
 public class User implements Serializable {
-    private int id;
-    private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int user_id;
+    private String user_name;
 }
