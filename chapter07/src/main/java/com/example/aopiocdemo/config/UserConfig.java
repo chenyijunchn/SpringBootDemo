@@ -10,13 +10,13 @@ import org.springframework.context.annotation.Configuration;
  * Date:2021/8/2711:29
  * Description:User 配置类
  */
-@Configuration
+//@Configuration
 public class UserConfig {
-   /* @Bean("user1")
+  /* @Bean("user1")
     public User user(){
         User user=new User();
-        user.setId(1);
-        user.setName("Jane");
+        user.setUser_id(1);
+        user.setUser_name("Cindy");
         return user;
     }*/
 }
