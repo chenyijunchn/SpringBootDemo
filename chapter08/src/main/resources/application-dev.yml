@@ -8,3 +8,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/springdb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     username: root
     password: 111111
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: updata
+        dialect: org.hibernate.dialect.MySQLInnoDBDialect
+    show-sql: true
