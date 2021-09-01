@@ -8,10 +8,16 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/springdb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     username: root
     password: 111111
+  thymeleaf:
+    cache: false
   jpa:
     properties:
       hibernate:
         hbm2ddl:
-          auto: updata
-        dialect: org.hibernate.dialect.MySQLInnoDBDialect
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

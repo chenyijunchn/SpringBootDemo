@@ -4,10 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * FileName:Article
@@ -17,7 +14,7 @@ import java.util.List;
  */
 @Entity
 @Data
-public class Article implements Serializable {
+public class Article extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -26,6 +23,10 @@ public class Article implements Serializable {
     @NotEmpty(message="title cannot be null")
     private String title;
 
+    @Column(nullable = false)
+    private String body;
+
+    /*
     @Column(columnDefinition = "enum('text','pict','all')")
     private String type;
 
@@ -35,9 +36,6 @@ public class Article implements Serializable {
     @Size(max=255)
     private String description;
 
-    @Column(nullable = false)
-    private String body;
-
     @Transient
     private List keywordlist;
     public List getKeywordlist() {
@@ -46,4 +44,6 @@ public class Article implements Serializable {
     public void setKeywordlists(List keywordlist){
         this.keywordlist=keywordlist;
     }
+    */
+
 }
