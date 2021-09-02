@@ -1,6 +1,6 @@
 package com.SpringBootDemo.service.impl;
 
-import com.SpringBootDemo.dao.IUserDao;
+import com.SpringBootDemo.dao.UserMapper;
 import com.SpringBootDemo.model.User;
 import com.SpringBootDemo.service.IUserService;
 import org.slf4j.Logger;
@@ -16,7 +16,7 @@ public class IUserServiceImpl implements IUserService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(IUserServiceImpl.class);
 
 	@Autowired
-	private IUserDao userDao;
+	private UserMapper userDao;
 
 	@Override
 	public List<User> getAll() {

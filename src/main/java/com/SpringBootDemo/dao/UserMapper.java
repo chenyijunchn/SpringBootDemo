@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
-public interface IUserDao {
+public interface UserMapper {
 	List<User> getAll();
 
 	User find(String userId);
