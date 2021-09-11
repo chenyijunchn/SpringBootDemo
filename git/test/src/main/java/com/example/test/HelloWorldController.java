@@ -12,6 +12,10 @@ public class HelloWorldController {
 
 
     public void dev(){
-        System.out.println("liwenhao");
+        System.out.println("liwenhao is your father");
+    }
+    
+    public void test(){
+        System.out.println("chenyijun");
     }
 }
