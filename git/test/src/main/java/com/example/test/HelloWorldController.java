@@ -16,6 +16,6 @@ public class HelloWorldController {
     }
     
     public void test(){
-        System.out.println("chenyijun");
+        System.out.println("chenyijun is baby");
     }
 }
