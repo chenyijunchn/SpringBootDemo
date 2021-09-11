@@ -20,6 +20,6 @@ public class HelloWorldController {
     }
 
     public void tes1t(){
-        System.out.println("chenyijun is babasdfdafy");
+        System.out.println("chenyijun is baby-1");
     }
 }
