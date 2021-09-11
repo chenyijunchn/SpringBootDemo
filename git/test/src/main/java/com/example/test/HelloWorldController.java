@@ -12,7 +12,7 @@ public class HelloWorldController {
 
 
     public void dev(){
-        System.out.println("liwenhao is your father");
+        System.out.println("liwenhao");
     }
     
     public void test(){
