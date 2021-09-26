@@ -5,10 +5,12 @@ import com.example.restfuldemo.repository.ArticleRepository;
 import com.example.restfuldemo.result.ExceptionMsg;
 import com.example.restfuldemo.result.Response;
 import com.example.restfuldemo.result.ResponseData;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ public class ArticleController {
     @Autowired
     RestTemplateBuilder restTemplateBuilder;
 
+    @ApiOperation(value="getlist",notes = "getList")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseData  getArticleList() {
         List<Article> list = new ArrayList<Article>(articleRepository.findAll());
@@ -73,6 +76,7 @@ public class ArticleController {
         return new ResponseData(ExceptionMsg.FAILED,article);
     }
     //查
+    @ApiIgnore//使用该注解忽略这个API
     @RequestMapping(value = "/re/{id}", method = RequestMethod.GET)
     public Article findArticled(@PathVariable("id") Integer id) throws IOException {
         RestTemplate client= restTemplateBuilder.build();
