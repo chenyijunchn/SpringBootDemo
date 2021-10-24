@@ -20,11 +20,9 @@ public class RedisController {
 
     @RequestMapping( "/update/")
     public String update(User user){
-
         userService.updataById(user);
         return "success";
     }
-
 
     @RequestMapping( "/delete/{id}")
     public String delete (@PathVariable String id){
